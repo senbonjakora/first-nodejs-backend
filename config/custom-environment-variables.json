@@ -1,4 +1,4 @@
 {
     "jsonTokenPrivateKey": "vidly_jsonTokenPrivateKey",
-    "db": "mongodb+srv://mesbahuddensaney:EVu7Y2WlEl28LJzc@cluster0.2yxw8h1.mongodb.net/?retryWrites=true&w=majority"
+    "db": "ONLINE_DB"
 }
