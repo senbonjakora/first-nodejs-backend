@@ -1,4 +1,5 @@
 {
     "jsonTokenPrivateKey": "vidly_jsonTokenPrivateKey",
-    "db": "ONLINE_DB"
+    "db": "ONLINE_DB",
+    "requireAuth": true
 }
