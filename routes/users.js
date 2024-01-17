@@ -9,7 +9,7 @@ const { User, validate } = require("../models/user");
 const auth = require("../middleware/auth");
 
 router.get("/me", auth, async (req, res) => {
-  const user = await User.findById(req.user.id);
+  const user = await User.findById(req.user._id);
   res.send(_.pick(user, ["username", "email"]));
 });
 
@@ -33,7 +33,10 @@ router.post("/", async (req, res) => {
   await user.save();
   const token = user.generateAuthToken();
 
-  res.header("x-auth-token", token).send(_.pick(user, ["username", "email"]));
+  res
+    .header("x-auth-token", token)
+    .header("access-control-expose-headers", "x-auth-token")
+    .send(_.pick(user, ["username", "email"]));
 });
 
 module.exports = router;

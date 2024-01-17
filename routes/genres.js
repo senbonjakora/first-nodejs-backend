@@ -13,6 +13,7 @@ router.get("/", async (req, res) => {
 
 router.get("/:id", async (req, res) => {
   const genre = await Genre.findById(req.params.id).select({ name: 1 });
+
   if (!genre)
     return res.status(404).send("The Genre with the given ID not abailable!");
 

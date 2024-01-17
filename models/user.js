@@ -27,7 +27,7 @@ const UserSchema = new mongoose.Schema({
 
 UserSchema.methods.generateAuthToken = function () {
   return jws.sign(
-    { _id: this._id, admin: this.isAdmin },
+    { _id: this._id, username: this.username, admin: this.isAdmin },
     config.get("jsonTokenPrivateKey")
   );
 };
